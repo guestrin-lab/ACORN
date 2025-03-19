@@ -25,7 +25,7 @@ nq=10
 gamma=1 # expansion factor
 dataset=amazon
 M_beta=16 # max degree, use same M and M_beta for now
-gt="gt_1M.bin.txt"
+gt="dense_gt_1M.bin.txt"
 efc=100 # build limit
 efs=0 # search limi0t, 0 for build only, >1 for search only
 
@@ -45,7 +45,7 @@ for M_beta in 32 64; do
             #echo "Running acorn with N=${N}, nq=${nq}, efc=${efc} efs=${efs}, M=${M_beta}, M_beta=${M_beta}, gamma=${gamma}"
             #./build/demos/acorn $N $nq ../$dataset/ . . $gt $efc $M_beta $efs &>> ${dir}/summary_${dataset}_n=${N}_nq=${nq}_efs=${efs}_gamma=${gamma}_M_beta=${M_beta}.txt
             for efs in 40 80 150; do
-                nq=5000
+                nq=3000
                 txtfile=${dir}/summary_${dataset}_n=${N}_nq=${nq}_efs=${efs}_gamma=${gamma}_M_beta=${M_beta}.txt
                 rm -f $txtfile
                 TZ='America/Los_Angeles' date +"Start time: %H:%M" &>> ${txtfile}

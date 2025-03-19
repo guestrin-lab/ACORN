@@ -1,0 +1,27 @@
+Start time: 10:07
+Max threads available: 64
+[Config] N: 1000000, nq: 5000, dataset_path: ../wikicohere/
+loaded metadata for 81545: 17,285,787,596,1082,769,697,67,583,299,722,518
+loaded metadata from: ../wikicohere//base_labels.txt
+Number of lines loaded: 35000000
+Value of N: 1000000
+[14.735 s] Loaded metadata, 5000000000 attributes found
+[0.000 s] Loading query vectors and attributes
+Reading bin file ../wikicohere//query_dense.fbin ...
+#pts = 966, #dims = 768
+Number of parts: 1
+Reading bin file ../wikicohere//query_dense.fbin ...
+#pts in part = 966, #dims = 768, size = 2967552B
+Finished reading part of the bin file.
+Finished converting part data to float.
+[0.025 s] Loaded query vectors from ../wikicohere//query.fbin
+Invalid dataset in load_aq
+loaded metadata from: ../wikicohere//query_dense_labels.txt
+Number of lines loaded: 966
+Value of N: 966
+Warning: nq is greater than the number of loaded queries, setting nq to 966
+[0.025 s] Loaded 5000 queries
+--ACORN index created
+SearchOnly 40
+====================Read Index====================
+

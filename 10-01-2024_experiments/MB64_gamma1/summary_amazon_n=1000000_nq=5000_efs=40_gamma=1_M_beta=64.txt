@@ -1,0 +1,27 @@
+Start time: 10:05
+Max threads available: 64
+[Config] N: 1000000, nq: 5000, dataset_path: ../amazon/
+loaded metadata for 81545: BRAND=GTGraphics,CAT=Automotive,CAT=ExteriorAccessories,CAT=BumperStickersDecalsMagnets,CAT=Decals,RATING=5
+loaded metadata from: ../amazon//base_labels.txt
+Number of lines loaded: 2000640
+Value of N: 1000000
+[9.095 s] Loaded metadata, 5000000000 attributes found
+[0.000 s] Loading query vectors and attributes
+Reading bin file ../amazon//query_dense.fbin ...
+#pts = 3653, #dims = 384
+Number of parts: 1
+Reading bin file ../amazon//query_dense.fbin ...
+#pts in part = 3653, #dims = 384, size = 5611008B
+Finished reading part of the bin file.
+Finished converting part data to float.
+[0.015 s] Loaded query vectors from ../amazon//query.fbin
+Invalid dataset in load_aq
+loaded metadata from: ../amazon//query_dense_labels.txt
+Number of lines loaded: 3653
+Value of N: 3653
+Warning: nq is greater than the number of loaded queries, setting nq to 3653
+[0.016 s] Loaded 5000 queries
+--ACORN index created
+SearchOnly 40
+====================Read Index====================
+

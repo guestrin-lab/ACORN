@@ -1,0 +1,105 @@
+Start time: 10:25
+Max threads available: 64
+[Config] N: 1000000, nq: 1000, dataset_path: ../yfcc/
+loaded metadata for 81545: 9,19
+loaded metadata from: ../yfcc//base_labels.txt
+Number of lines loaded: 9998928
+Value of N: 1000000
+[3.305 s] Loaded metadata, 1000000000 attributes found
+[0.000 s] Loading query vectors and attributes
+Reading bin file ../yfcc//query_dense.fbin ...
+#pts = 1016, #dims = 192
+Number of parts: 1
+Reading bin file ../yfcc//query_dense.fbin ...
+#pts in part = 1016, #dims = 192, size = 780288B
+Finished reading part of the bin file.
+Finished converting part data to float.
+[0.012 s] Loaded query vectors from ../yfcc//query.fbin
+Invalid dataset in load_aq
+loaded metadata from: ../yfcc//query_dense_labels.txt
+Number of lines loaded: 1016
+Value of N: 1016
+[0.013 s] Loaded 1000 queries
+--ACORN index created
+SearchOnly 150
+====================Read Index====================
+
+[0.000 s] Read hybrid index from file: ../yfcc//hybrid_index_M=64_efc=100_Mb=64_gamma=12_N1000000_M64.index
+====================================
+============ ACORN INDEX =============
+====================================
+========= METADATA =======
+	* cumulative max num neighbors per level
+		indx 0: 0
+		indx 1: 224
+		indx 2: 992
+		indx 3: 1760
+		indx 4: 2528
+	* level probabilities
+		level 0: 0.984375
+		level 1: 0.015381
+		level 2: 0.000240
+		level 3: 0.000004
+		level 4: 0.000000
+	* efConstruction: 100
+	* efSearch: 150
+	* max_level: 3
+	* entry_point: 803702
+	* gamma: 12
+========= LEVEL STATS OF ACORN =======
+========= LEVEL 0 =======
+* stats on level 0, max 224 neighbors per vertex:
+   1. nb of nodes: 1000000
+   2. neighbors per node: 144.95 (144952326)
+   3. nb of reciprocal neighbors: 107.73
+   4. nb of neighbors that are also neighbor-of-neighbors: 144.16 (144162019)
+========= LEVEL 1 =======
+* stats on level 1, max 768 neighbors per vertex:
+   1. nb of nodes: 15653
+   2. neighbors per node: 195.88 (3066114)
+   3. nb of reciprocal neighbors: 192.66
+   4. nb of neighbors that are also neighbor-of-neighbors: 195.86 (3065721)
+========= LEVEL 2 =======
+* stats on level 2, max 768 neighbors per vertex:
+   1. nb of nodes: 210
+   2. neighbors per node: 148.13 (31108)
+   3. nb of reciprocal neighbors: 147.77
+   4. nb of neighbors that are also neighbor-of-neighbors: 148.01 (31083)
+========= LEVEL 3 =======
+* stats on level 3, max 768 neighbors per vertex:
+   1. nb of nodes: 5
+   2. neighbors per node: 4.00 (20)
+   3. nb of reciprocal neighbors: 4.00
+   4. nb of neighbors that are also neighbor-of-neighbors: 4.00 (20)
+METADATA VEC for number nodes per level
+	level 0: 999796 nodes
+	level 1: 15642 nodes
+	level 2: 208 nodes
+	level 3: 5 nodes
+	level 4: 0 nodes
+==============================================
+====================Search Results====================
+==============================================
+==================== ACORN INDEX ====================
+[0.000 s] Searching the 10 nearest neighbors of 1000 vectors in the index, efsearch 150
+[0.000 s] *** Start filter_ids_map 1727803528.000
+[81.635 s] *** Done filter_ids_map 79.384
+[86.338 s] *** Done Query 4.703
+config nq: 1000 dis size:10000nns size:10000id map:1000000000
+aq_strings size: 1016
+metadata_strings size: 9998928
+[86.338 s] Query results (vector ids, then distances):
+query  0 nn's (29):  814696 (5,12,29)  444786 (4,22,29,117913,32952,26736,24803,23917,23901,23210,22765,22536,21763,15298,14050,13901,13417,12396,11087,9728,9368,8515,7344,7335,6655,5867,5664,3577,3575,3185,2161,1996,1541,1439,1322,1286,908,877,537,426)  314496 (7,22,29)  178696 (10,15,29,3348)  682876 (7,14,29,40669,24232)  436682 (6,17,29)    5353 (7,23,29)  111392 (10,21,29,181459,171295,141457,134740,99833,51819,26335,20874,13298,13074,11433,10174,6432,6098,5599,3217,493,435)  143619 (10,15,29)  346873 (1,16,29,19696,1435,850) 
+     dis: 	  45162   48036   49224   49225   49871   50932   52040   52257   52552   53337 
+query  1 nn's (3):  932430 (3,17,24,15527)  574356 (3,18,39,2509,1453,1278,390)  673003 (3,14,30)  469635 (3,23,24,91,115033,96741,63083,62977,55312,44006,39833,38988,31820,10796,6334,4765,4455,3990,3668,908)  298785 (3,22,30)  595042 (3,19,30)  604737 (3,14,30,9347,6938,3729,3157)  688131 (3,16,24,96373,10015,7819,4791)    7218 (3,19,30,110,75609,75608,75607,75606,57333,48964,33576,26144,26140,11313,10262,9666,9336,6177,6174,6171,6039,5413,3615,3353,2919,2914,2912,2619,925,746)   75064 (3,18,33,65033,2954) 
+     dis: 	  53954   58345   60522   61111   62252   66432   66486   66544   66715   66810 
+query  2 nn's (36):  390974 (10,19,36,101,20348,3182)  718986 (10,18,36,90,338,4864)  289100 (10,16,36,90,367,28382,17368,8347,7985,7765,7476,7334,6821,4836,3179,1516,934,535)  432369 (8,16,36,90,349,1343,488)  676767 (8,18,36)  459625 (10,18,36)  497309 (8,16,36,40089,22203,7531,6208,5779,5706,4300,3335,3166,2840,2837,2544,660)  136788 (9,18,36,25086,19244,6288,1616)  305439 (9,13,36,26070)  509350 (9,20,36,90,337) 
+     dis: 	  54829   55831   56012   57397   58284   58575   58757   59596   60627   61606 
+query  3 nn's (29):  306736 (8,20,29,16493,13333,10861)  601546 (8,13,29)  351923 (5,18,29,189732,137218,105761,105513,8505,6481,5898,5858,4006,607,606)  810692 (4,15,29,33097,11326,486,431)  969441 (8,20,29,13333,10861,5570,3386,3385)  514446 (4,17,29,5972,4941)  889305 (6,15,29,71546)  115157 (9,16,29,26782,8698,5212,1691)  840172 (6,12,29,132021,66119,26957,25240,8514,6962,4720,1885)  339300 (6,16,29) 
+     dis: 	  39712   46152   49322   50588   50833   51328   51353   51808   52348   52450 
+query  4 nn's (26):  308852 (4,15,26,163215,87543,47884,39046,3031)   56996 (7,13,26,13828,11262)  838849 (9,17,26,15228,14852,5776,4583,3809,3732,3457,2838,2303,2134,2013,1583,918,905,653)  301070 (9,16,26)   97405 (4,15,26,94,27761,27750,10065,6464,6199,3752,3404,903,828,455)   97406 (4,15,26,94,27761,27750,10065,6464,6199,3752,3404,903,828,455)  279464 (5,17,26,92,64586,30939,12277,12275,12274,3216)  836888 (7,21,26,137084,70552,27724,25106,24551,7641,4930,2170,2065)  181525 (3,12,26,19937)  339269 (6,22,26,27327,10533,10532,9624,6706,6311,5745,2836,2440,1338) 
+     dis: 	  68765   76720   88230   96771   98045   98045   99226  100354  107019  109436 
+GT Filename: ../yfcc/dense_gt_1M.bin.txt
+Mismatch between number of queries in ground truth file and nns2
+Recall@10: 0.994
+[104.730 s] -----DONE-----

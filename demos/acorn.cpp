@@ -173,11 +173,11 @@ size_t loadQueryData(const Config& config, float*& xq, std::vector<int>& aq, std
 
     // Example: Load from files (to be replaced with actual file paths)
 
-    xq = fbin_read((config.dataset_path + "/query.fbin").c_str(), &d2, &nq_loaded);
+    xq = fbin_read((config.dataset_path + "/query_dense.fbin").c_str(), &d2, &nq_loaded);
 
     printf("[%.3f s] Loaded query vectors from %s\n", elapsed() - t0, (config.dataset_path + "/query.fbin").c_str());
     aq = load_aq(config.dataset_name, config.n_centroids, config.alpha, config.N);
-    aq_strings = load_metadata_strings(config.dataset_path + "/query_labels.txt", nq_loaded);
+    aq_strings = load_metadata_strings(config.dataset_path + "/query_dense_labels.txt", nq_loaded);
 
     // Adjust nq if necessary
     if (config.nq > nq_loaded) {

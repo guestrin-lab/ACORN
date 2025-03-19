@@ -1,0 +1,4 @@
+Start time: 10:08
+Max threads available: 64
+[Config] N: 1000000, nq: 5000, dataset_path: ../wikicohere/
+loaded metadata for 81545: 17,285,787,596,1082,769,697,67,583,299,722,518
