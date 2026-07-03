@@ -106,3 +106,6 @@ target_link_libraries(utils PRIVATE faiss)
 
 add_executable(test_acorn EXCLUDE_FROM_ALL test_acorn.cpp)
 target_link_libraries(test_acorn PRIVATE faiss)
+
+add_executable(test_efsearch_params EXCLUDE_FROM_ALL test_efsearch_params.cpp)
+target_link_libraries(test_efsearch_params PRIVATE faiss)
