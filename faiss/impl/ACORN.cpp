@@ -1440,8 +1440,11 @@ ACORNStats ACORN::search(
             greedy_update_nearest(*this, qdis, level, nearest, d_nearest);
         }
 
-        
-        int ef = std::max(efSearch, k);
+        // honor the search-time efSearch override when sizing the candidate
+        // heap; previously only the member value (set at construction) was
+        // used, so params->efSearch had no effect above the default
+        int efSearch_eff = params ? params->efSearch : efSearch;
+        int ef = std::max(efSearch_eff, k);
         if (search_bounded_queue) { // this is the most common branch
             debug("%s\n", "reached search bounded queue");
 
@@ -1544,7 +1547,11 @@ ACORNStats ACORN::hybrid_search(
         }
         stats.n3 += ndis_upper;
 
-        int ef = std::max(efSearch, k);
+        // honor the search-time efSearch override when sizing the candidate
+        // heap; previously only the member value (set at construction) was
+        // used, so params->efSearch had no effect above the default
+        int efSearch_eff = params ? params->efSearch : efSearch;
+        int ef = std::max(efSearch_eff, k);
         if (search_bounded_queue) { // this is the most common branch
             debug("%s\n", "reached search bounded queue");
 
