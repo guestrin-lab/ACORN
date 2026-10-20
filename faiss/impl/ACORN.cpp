@@ -682,7 +682,12 @@ void add_link(
     
     
 
-    // ...and back
+    // ...and back. Only level 0 is shrunk above, so on upper levels resultSet holds
+    // end - begin + 1 entries (the full list plus dest). Drop the farthest ones so the
+    // copy-back stays inside this node's neighbor slot instead of writing past `end`.
+    while (resultSet.size() > end - begin) {
+        resultSet.pop();
+    }
     size_t i = begin;
     while (resultSet.size()) {
         // hnsw.neighbors[i++] = resultSet.top().id;
@@ -1058,7 +1063,7 @@ void ACORN::add_with_locks(
     float d_nearest = ptdis(nearest);
 
     // needed for backtracking in hybrid search - TODO DEPRECATED, remove backtracking things
-    std::vector<storage_idx_t> ep_per_level(max_level); // idx of nearest node per level
+    std::vector<storage_idx_t> ep_per_level(max_level + 1); // idx of nearest node per level
     ep_per_level[level] = nearest;
 
     for (; level > pt_level; level--) {
